@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>زەر · مینیوی زیندوو</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+<style id="css">
+:root{--bg:#080604;--card:#14100a;--gold:#c9a24a;--gold2:#f0d58c;--ivory:#efe6d2;--mut:#8d7f63;--line:#2c2416;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html,body{background:var(--bg);color:var(--ivory)}
+body{font-family:"Noto Naskh Arabic","Cormorant Garamond",serif;max-width:520px;margin:0 auto;padding:0 20px 120px;line-height:1.7}
+body.en{font-family:"Cormorant Garamond","Noto Naskh Arabic",serif;font-size:1.08em}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:8px}
+.top button,.top select{background:none;border:1px solid var(--line);color:var(--gold);border-radius:20px;padding:4px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+.langs{display:flex;gap:6px}
+.langs .on{background:var(--gold);color:var(--on)}
+.hero{text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--line)}
+.logo{font-family:Amiri,serif;font-size:4.6rem;line-height:1;background:linear-gradient(120deg,var(--gold),var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s ease-in-out infinite}
+@keyframes shine{50%{background-position:100% 0}}
+.hero p{color:var(--mut);margin-top:6px}
+.tabs{display:flex;gap:8px;margin:22px 0}
+.tabs button{flex:1;background:var(--card);border:1px solid var(--line);color:var(--mut);border-radius:12px;padding:10px 4px;font:inherit;cursor:pointer}
+.tabs .on{border-color:var(--gold);color:var(--gold2)}
+.tabs small{display:block;font-size:.72rem;color:var(--gold)}
+.item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.item h3{font-family:Amiri,serif;font-size:1.25rem;font-weight:400}
+.pr{color:var(--gold);font-size:.95rem}
+.pr[contenteditable=true]{outline:1px dashed var(--gold);padding:0 6px;border-radius:4px}
+.qty{display:flex;align-items:center;gap:10px;direction:ltr}
+.qty button{width:32px;height:32px;border-radius:50%;border:1px solid var(--gold);background:none;color:var(--gold);font-size:1.1rem;cursor:pointer}
+.qty b{min-width:14px;text-align:center}
+.bar{position:fixed;inset-inline:0;bottom:0;padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,var(--bg) 35%);display:flex;justify-content:center}
+.send{width:100%;max-width:480px;background:linear-gradient(120deg,var(--gold),var(--gold2));color:var(--on);border:0;border-radius:14px;padding:14px;font:inherit;font-weight:600;font-size:1.05rem;cursor:pointer}
+.send[disabled]{opacity:.35}
+.hint{color:var(--mut);text-align:center;font-size:.85rem;margin-top:24px}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+.hero{position:relative;overflow:hidden}
+#fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.logo,.hero p{position:relative}
+.item{animation:up .5s both;animation-delay:calc(var(--i)*70ms)}
+@keyframes up{from{opacity:0;transform:translateY(12px)}}
+.item .l{display:flex;gap:12px;align-items:center}
+.ph{width:64px;height:64px;border-radius:12px;border:1px solid var(--line);background:var(--card);flex:none;display:grid;place-items:center;color:var(--gold)}
+.ph.ed{cursor:pointer;border:1px dashed var(--gold)}
+.cardv{text-align:center;padding:28px 0}
+.cardv h2{font-family:Amiri,serif;font-size:2rem;font-weight:400;color:var(--gold2)}
+.cardv p{color:var(--mut);margin:4px 0 22px}
+.cardv a{display:block;border:1px solid var(--gold);color:var(--gold2);border-radius:14px;padding:13px;margin:10px 0;text-decoration:none}
+.cardv a:hover{background:var(--gold);color:var(--on)}
+.cardv img{width:150px;height:150px;border-radius:12px;background:#fff;padding:8px}
+.hero{background:radial-gradient(ellipse at 50% 0,rgba(201,162,74,.2),transparent 65%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23c9a24a' stroke-opacity='.17'%3E%3Crect x='12' y='12' width='24' height='24'/%3E%3Crect x='12' y='12' width='24' height='24' transform='rotate(45 24 24)'/%3E%3C/g%3E%3C/svg%3E")}
+.orn{display:block;margin:16px auto 0;position:relative}
+.tabs .on{box-shadow:0 0 18px rgba(201,162,74,.28)}
+.sg{display:block;color:var(--gold);font-size:.78rem}
+.send{background-size:200% 100%;animation:shine 5s ease-in-out infinite}
+#sp{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;place-items:center;transition:opacity .9s,visibility .9s}
+#sp.off{opacity:0;visibility:hidden}
+#sp .logo{font-size:6rem;animation:zoom 1.6s ease-out both}
+@keyframes zoom{from{opacity:0;transform:scale(.85)}}
+#ts{position:fixed;inset-inline:0;bottom:84px;text-align:center;pointer-events:none;color:var(--gold2);opacity:0}
+#ts.on{animation:tst 1.2s}
+@keyframes tst{0%{transform:translateY(10px)}15%,70%{opacity:1;transform:none}100%{opacity:0}}
+#ty{position:fixed;inset:0;z-index:40;background:var(--veil);display:none;place-items:center;text-align:center;padding:24px}
+#ty.on{display:grid}
+#ty .crown{font-size:4rem;color:var(--gold2);animation:zoom 1s both}
+#ty h2{font-family:Amiri,serif;font-weight:400;font-size:1.7rem;margin:12px 0 24px}
+#ty .send{max-width:260px}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;margin:0 -20px;padding:14px 20px;background:var(--glass);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+body::before{content:"";position:fixed;top:8px;bottom:8px;left:50%;width:calc(min(520px,100%) - 16px);transform:translateX(-50%);border:1px solid rgba(201,162,74,.22);border-radius:6px;pointer-events:none;z-index:1}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle 170px at var(--mx,50%) var(--my,30%),rgba(240,213,140,.13),transparent)}
+.st{position:relative;margin-top:12px;font-size:.88rem;color:var(--gold2)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#7bc47f;margin-inline-end:8px;box-shadow:0 0 8px #7bc47f;animation:pulse 2s infinite}
+.dot.x{background:#a55;box-shadow:none;animation:none}
+@keyframes pulse{50%{opacity:.4}}
+.sec{font-family:Amiri,serif;font-weight:400;font-size:1.5rem;color:var(--gold2);display:flex;justify-content:space-between;align-items:baseline;margin-top:8px}
+.sec small{font-family:inherit;color:var(--mut);font-size:.8rem}
+.item{animation:none;transition:background .3s}
+.item.a{animation:up .5s both;animation-delay:calc(var(--i)*70ms)}
+.item.sel{border-inline-start:2px solid var(--gold);padding-inline-start:10px;background:rgba(201,162,74,.06)}
+.ft{text-align:center;color:var(--mut);font-size:.82rem;border-top:1px solid var(--line);margin-top:20px;padding-top:16px}
+.bar{gap:10px}
+.cb{flex:none;width:52px;border-radius:14px;border:1px solid var(--gold);background:var(--bg);color:var(--gold);position:relative;cursor:pointer;display:grid;place-items:center}
+.cb[disabled]{opacity:.35}
+.cb i{position:absolute;top:-6px;inset-inline-end:-6px;background:var(--gold);color:var(--on);border-radius:10px;font:600 .72rem system-ui;padding:0 6px;font-style:normal}
+#sh{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.6);display:none;align-items:flex-end}
+#sh.on{display:flex}
+.sheet{width:100%;max-width:520px;margin:0 auto;background:var(--card);border-top:1px solid var(--gold);border-radius:20px 20px 0 0;padding:22px 20px calc(24px + env(safe-area-inset-bottom,0px));animation:sl .35s}
+@keyframes sl{from{transform:translateY(100%)}}
+.sheet h2{font-family:Amiri,serif;font-weight:400;color:var(--gold2);margin-bottom:10px}
+.ln{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)}
+.shr{display:flex;justify-content:space-between;padding-top:14px;color:var(--gold2);font-size:1.1rem}
+.logo{filter:drop-shadow(0 0 22px rgba(201,162,74,.35))}
+.ds{color:var(--mut);font-size:.85rem;line-height:1.5;margin:2px 0 4px;max-width:30ch}
+#nt{width:100%;margin-top:12px;background:var(--bg);border:1px solid var(--line);border-radius:10px;color:var(--ivory);font:inherit;padding:8px 10px;resize:none}
+:root{--on:#1a1307;--glass:rgba(8,6,4,.78);--veil:rgba(8,6,4,.95)}
+:root[data-th="i"]{--bg:#f6efe0;--card:#fffaf0;--ivory:#2a2012;--mut:#7a6a49;--line:#e2d4b5;--gold:#9a7418;--gold2:#6f5208;--on:#fff8e6;--glass:rgba(246,239,224,.82);--veil:rgba(246,239,224,.96);color-scheme:light}
+.top{flex-wrap:wrap}
+#pub{background:var(--gold)!important;color:var(--on)!important;font-weight:600}
+[contenteditable=true]{outline:1px dashed rgba(201,162,74,.55);outline-offset:2px;border-radius:4px;min-height:1.2em}
+.ctl{display:flex;gap:6px;margin-top:6px}
+.mini{background:none;border:1px solid var(--line);color:var(--gold);border-radius:8px;padding:2px 10px;cursor:pointer}
+.addb{display:block;width:100%;margin:18px 0 0;background:none;border:1px dashed var(--gold);color:var(--gold2);border-radius:14px;padding:13px;font:inherit;cursor:pointer}
+.adm{text-align:start;margin-top:22px;display:grid;gap:10px}
+.adm label{display:grid;gap:4px;color:var(--mut);font-size:.82rem}
+.adm input{background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--ivory);padding:9px 10px;font:inherit;direction:ltr}
+@media(prefers-reduced-motion:reduce){.logo,.item.a,.send,.dot,.sheet,#ty .crown{animation:none}#sp{display:none}}
+</style>
+</head>
+<body>
+<div id="root">
+<div class="top">
+  <div class="langs" id="langs"></div>
+  <select id="tbl" aria-label="table"></select>
+  <button id="pub" hidden></button><button id="own" hidden></button><button id="th" aria-label="theme">◐</button>
+</div>
+<header class="hero"><canvas id="fx"></canvas><div class="logo">زەر</div><p id="tag"></p><div class="st" id="st"></div><svg class="orn" viewBox="0 0 200 12" width="180" height="12" aria-hidden="true"><path d="M0 6h80M120 6h80" stroke="#c9a24a" stroke-opacity=".6"/><path d="M100 0l6 6-6 6-6-6z" fill="#c9a24a"/><circle cx="88" cy="6" r="1.5" fill="#c9a24a"/><circle cx="112" cy="6" r="1.5" fill="#c9a24a"/></svg></header>
+<nav class="tabs" id="tabs"></nav>
+<main id="list"></main>
+<p class="hint" id="hint"></p>
+<footer class="ft" id="ft"></footer>
+<div id="sh"><div class="sheet"><h2 id="sht"></h2><div id="shl"></div><textarea id="nt" rows="2"></textarea><div class="shr"><span id="shk"></span><b id="shv"></b></div></div></div>
+<div id="sp"><div class="logo" id="spl"></div></div><div id="ts"></div><div id="ty"><div><div class="crown">♛</div><h2 id="tyt"></h2><button class="send" id="tyb"></button></div></div>
+<div class="bar"><button class="cb" id="cartb" aria-label="order"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 016 0v2"/></svg><i id="cn"></i></button><button class="send" id="send"></button></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script type="application/json" id="data">null</script>
+<script id="app">
+const SK=document.getElementById("root").innerHTML;
+/* Defaults below are used until the owner edits and publishes from the page itself */
+let C={name:"زەر",tag:{ku:"خواردنی ڕەسەن، بە ڕەنگی زێڕ",ar:"طعام أصيل بلمسة من ذهب",en:"Authentic food, served in gold"},wa:"9647500000000",tel:"+9647500000000",ig:"https://instagram.com/yourrestaurant",map:"https://maps.google.com/?q=Erbil",open:[10,23],addr:{ku:"هەولێر، شەقامی ٦٠ مەتری",ar:"أربيل، شارع ٦٠ متر",en:"Erbil, 60m Road"}};
+const T={
+ku:{tag:"خواردنی ڕەسەن، بە ڕەنگی زێڕ",table:"مێز",now:"ئێستا",total:"کۆی گشتی",send:"ناردنی داواکاری بە واتسئەپ",empty:"خواردنێک هەڵبژێرە",own:"دەستکاری",done:"تەواو",cur:"دینار",hint:"نرخەکان بۆ ئەم کاتە دیاری کراون و بە خۆکاری دەگۆڕێن.",hello:"سڵاو، داواکاری مێز",card:"کارت",call:"پەیوەندی بکە",loc:"لۆکەیشن",ig:"ئینستاگرام",wa:"واتسئەپ",scan:"QR ی مێزی",sig:"تایبەتی ئاشپەز",thx:"سوپاس، داواکارییەکەت نێردرا",op:"ئێستا کراوەیە",cl:"ئێستا داخراوە",nt:"تێبینی (وەک بێ پیاز...)",pub:"بڵاوکردنەوە",saving:"چاوەڕێ بکە...",pfail:"بڵاونەکرایەوە",add:"+ خواردنی نوێ",fl:["ناوی ڕێستورانت","ژمارەی واتسئەپ (964...)","ژمارەی تەلەفۆن","لینکی ئینستاگرام","لینکی نەخشە","کاتی کردنەوە","کاتی داخستن"]},
+ar:{tag:"طعام أصيل بلمسة من ذهب",table:"طاولة",now:"الآن",total:"المجموع",send:"أرسل الطلب عبر واتساب",empty:"اختر طبقاً",own:"تعديل",done:"تم",cur:"دينار",hint:"القائمة تتغير تلقائياً حسب الوقت.",hello:"مرحباً، طلب الطاولة",card:"بطاقة",call:"اتصل بنا",loc:"الموقع",ig:"انستغرام",wa:"واتساب",scan:"رمز الطاولة",sig:"طبق الشيف",thx:"شكراً، تم إرسال طلبك",op:"مفتوح الآن",cl:"مغلق الآن",nt:"ملاحظات (مثلاً بدون بصل)",pub:"نشر",saving:"انتظر...",pfail:"تعذر النشر",add:"+ طبق جديد",fl:["اسم المطعم","رقم واتساب (964...)","رقم الهاتف","رابط انستغرام","رابط الخريطة","ساعة الفتح","ساعة الإغلاق"]},
+en:{tag:"Authentic food, served in gold",table:"Table",now:"Now",total:"Total",send:"Send order on WhatsApp",empty:"Choose a dish",own:"Edit",done:"Done",cur:"IQD",hint:"The menu changes automatically through the day.",hello:"Hello, order for table",card:"Card",call:"Call us",loc:"Location",ig:"Instagram",wa:"WhatsApp",scan:"QR for table",sig:"Chef's signature",thx:"Thank you, your order was sent",op:"Open now",cl:"Closed now",nt:"Notes (e.g. no onions)",pub:"Publish",saving:"Saving...",pfail:"Could not publish",add:"+ New dish",fl:["Restaurant name","WhatsApp number (964...)","Phone number","Instagram link","Map link","Opens at","Closes at"]}};
+const P=[{k:"b",n:{ku:"بەیانی",ar:"الصباح",en:"Morning"}},{k:"l",n:{ku:"نیوەڕۆ",ar:"الظهر",en:"Noon"}},{k:"d",n:{ku:"ئێوارە",ar:"المساء",en:"Evening"}}];
+let M=[
+["b","b1",{ku:"عەجە بە پەنیر",ar:"عجة بالجبن",en:"Cheese omelette"},6000],
+["b","b2",{ku:"قەیماخ و هەنگوین",ar:"قشطة وعسل",en:"Cream & honey"},7000],
+["b","b3",{ku:"شەکشوکە",ar:"شكشوكة",en:"Shakshuka"},8000],
+["b","b4",{ku:"قاوەی تورکی",ar:"قهوة تركية",en:"Turkish coffee"},3000],
+["l","l1",{ku:"دۆڵمەی بەرخ",ar:"دولمة لحم",en:"Lamb dolma"},12000],
+["l","l2",{ku:"مریشکی برژاو",ar:"دجاج مشوي",en:"Grilled chicken"},14000],
+["l","l3",{ku:"مەسگوف",ar:"مسگوف",en:"Masgouf"},25000],
+["l","l4",{ku:"شۆربای نیسک",ar:"شوربة عدس",en:"Lentil soup"},4000],
+["d","d1",{ku:"ئوزی بەرخ",ar:"أوزي لحم",en:"Lamb ouzi"},28000],
+["d","d2",{ku:"تێکەڵەی برژاو",ar:"مشاوي مشكل",en:"Mixed grill"},30000],
+["d","d3",{ku:"کونافە",ar:"كنافة",en:"Kunafa"},9000],
+["d","d4",{ku:"چایی زەعفەران",ar:"شاي بالزعفران",en:"Saffron tea"},4000]];
+const hr=new Date().getHours(),auto=hr<11?"b":hr<17?"l":"d";
+let S={lang:"ku",per:auto,own:false,cart:{},table:+(new URLSearchParams(location.search).get("t"))||5,img:{}};
+const $=i=>document.getElementById(i),pr=m=>m[3],fmt=n=>n.toLocaleString(S.lang=="en"?"en-US":"ar-IQ");
+function render(){
+ const t=T[S.lang],r=S.lang!="en";
+ document.documentElement.lang=S.lang;document.documentElement.dir=r?"rtl":"ltr";document.body.className=r?"":"en";
+ $("langs").innerHTML=[["ku","کوردی"],["ar","عربي"],["en","EN"]].map(([k,v])=>`<button class="${k==S.lang?"on":""}" data-l="${k}">${v}</button>`).join("");
+ $("tbl").innerHTML=Array.from({length:12},(_,i)=>`<option value="${i+1}" ${i+1==S.table?"selected":""}>${t.table} ${i+1}</option>`).join("");
+ $("own").textContent=S.own?t.done:t.own;$("own").hidden=!S.admin;$("pub").hidden=!(S.admin&&S.dirty);$("pub").textContent=t.pub;$("tag").contentEditable=$("ft").contentEditable=S.own;$("tag").textContent=C.tag[S.lang];document.querySelector(".logo").textContent=C.name;document.title=C.name;const o=hr>=C.open[0]&&hr<C.open[1];$("st").innerHTML=`<i class="dot ${o?"":"x"}"></i>${o?t.op:t.cl} · <bdi dir="ltr">${C.open[0]}:00 – ${C.open[1]}:00</bdi>`;$("ft").textContent=C.addr[S.lang];$("hint").textContent=t.hint;
+ $("tabs").innerHTML=P.map(p=>`<button class="${p.k==S.per?"on":""}" data-p="${p.k}">${p.n[S.lang]}${p.k==auto?`<small>${t.now}</small>`:""}</button>`).join("")+`<button class="${S.per=="c"?"on":""}" data-p="c">${t.card}</button>`;
+ $("list").innerHTML=S.per=="c"?cardV():secH()+M.filter(m=>m[0]==S.per).map((m,i)=>`<div class="item${S.q?"":" a"}${S.cart[m[1]]?" sel":""}" style="--i:${i}"><div class="l"><div class="ph ${S.own?"ed":""}" data-ph="${m[1]}">${img(m[1])}</div><div><h3 ${ed(m[1],"n")}>${m[2][S.lang]}</h3>${SG.has(m[1])?`<small class="sg">♛ ${t.sig}</small>`:""}<p class="ds" ${ed(m[1],"ds")}>${(DS[m[1]]||{})[S.lang]||""}</p><span class="pr" data-e="${m[1]}:pr" ${S.own?'contenteditable="true" inputmode="numeric"':""}>${fmt(pr(m))}</span> <span class="pr">${t.cur}</span>${S.own?`<div class="ctl"><button class="mini" data-g="${m[1]}">♛</button><button class="mini" data-x="${m[1]}">✕</button></div>`:""}</div></div><div class="qty"><button data-a="${m[1]}" data-d="-1" aria-label="-">−</button><b>${S.cart[m[1]]||0}</b><button data-a="${m[1]}" data-d="1" aria-label="+">+</button></div></div>`).join("")+(S.own?`<button class="addb" data-add="1">${t.add}</button>`:"");
+ document.querySelector(".bar").style.display=S.per=="c"?"none":"";
+ if(S.per=="c"&&window.qrcode){const q=qrcode(0,"M");q.addData(location.href.split("?")[0]+"?t="+S.table);q.make();$("qr").src=q.createDataURL(5)}
+ bar();
+}
+function tot(){return M.reduce((s,m)=>s+(S.cart[m[1]]||0)*pr(m),0)}
+function bar(){const t=T[S.lang],n=tot(),c=Object.values(S.cart).reduce((a,b)=>a+b,0);$("cn").textContent=c;$("cn").style.display=c?"":"none";$("cartb").disabled=!c;$("send").disabled=!n;$("send").textContent=n?`${t.send} · ${fmt(n)} ${t.cur}`:t.empty}
+document.addEventListener("click",e=>{
+ if(e.target.id=="sh"){$("sh").classList.remove("on");return}
+ const ph=e.target.closest("[data-ph]");if(ph&&S.own){pick(ph.dataset.ph);return}
+ const b=e.target.closest("button");if(!b)return;
+ if(b.dataset.l){S.lang=b.dataset.l;render()}
+ else if(b.dataset.p){S.per=b.dataset.p;render()}
+ else if(b.dataset.a){const k=b.dataset.a;S.cart[k]=Math.max(0,(S.cart[k]||0)+ +b.dataset.d);S.q=1;render();S.q=0;if(+b.dataset.d>0)toast(k)}
+ else if(b.id=="own"){S.own=!S.own;render()}
+ else if(b.id=="pub"){publish()}
+ else if(b.dataset.g){const k=b.dataset.g;SG.has(k)?SG.delete(k):SG.add(k);dirty();render()}
+ else if(b.dataset.x){const k=b.dataset.x;M=M.filter(x=>x[1]!=k);delete DS[k];delete S.img[k];delete S.cart[k];SG.delete(k);dirty();render()}
+ else if(b.dataset.add){const k="x"+Date.now().toString(36);M.push([S.per,k,{ku:"خواردنی نوێ",ar:"طبق جديد",en:"New dish"},5000]);DS[k]={ku:"",ar:"",en:""};dirty();render()}
+ else if(b.id=="cartb"){sheet()}
+ else if(b.id=="th"){const d=document.documentElement,v=d.dataset.th=="i"?"":"i";d.dataset.th=v;try{localStorage.setItem("zer-t",v)}catch(x){}}
+ else if(b.id=="tyb"){S.cart={};$("ty").classList.remove("on");render()}
+ else if(b.id=="send"){
+  const t=T[S.lang],L=M.filter(m=>S.cart[m[1]]).map(m=>`• ${m[2][S.lang]} × ${S.cart[m[1]]}`);
+  const msg=`${t.hello} ${S.table}\n${L.join("\n")}\n${t.total}: ${fmt(tot())} ${t.cur}${$("nt").value.trim()?"\n📝 "+$("nt").value.trim():""}`;
+  window.open("https://wa.me/"+C.wa+"?text="+encodeURIComponent(msg),"_blank");$("tyt").textContent=t.thx;$("tyb").textContent=t.done;$("ty").classList.add("on");
+ }
+});
+$("tbl").addEventListener("change",e=>{S.table=+e.target.value;if(S.per=="c")render()});
+document.addEventListener("focusout",e=>{
+ const id0=e.target.id;
+ if(id0=="tag"||id0=="ft"){const o=id0=="tag"?C.tag:C.addr,tx=e.target.textContent.trim();if(tx&&tx!=o[S.lang]){o[S.lang]=tx;dirty()}render();return}
+ const k=e.target.dataset&&e.target.dataset.e;if(!k)return;
+ const [id,f]=k.split(":"),m=M.find(x=>x[1]==id);if(!m)return;const tx=e.target.textContent.trim();
+ if(f=="pr"){const v=parseInt(tx.replace(/[٠-٩]/g,d=>"٠١٢٣٤٥٦٧٨٩".indexOf(d)).replace(/\D/g,""));if(v>0&&v!=m[3]){m[3]=v;dirty()}}
+ else if(f=="n"){if(tx&&tx!=m[2][S.lang]){m[2][S.lang]=tx;dirty()}}
+ else if(f=="ds"){const d=DS[id]=DS[id]||{ku:"",ar:"",en:""};if(tx!=d[S.lang]){d[S.lang]=tx;dirty()}}
+ S.q=1;render();S.q=0;
+});
+const img=k=>S.img[k]?`<img src="${S.img[k]}" alt="" style="width:100%;height:100%;border-radius:11px;object-fit:cover">`:`<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.5"/><path d="M2 4v6M22 4v6"/></svg>`;
+function cardV(){const t=T[S.lang];return `<div class="cardv"><h2>${C.name}</h2><p>${C.tag[S.lang]}</p><a href="tel:${C.tel}">${t.call}</a><a href="${C.map}" target="_blank" rel="noopener">${t.loc}</a><a href="${C.ig}" target="_blank" rel="noopener">${t.ig}</a><a href="https://wa.me/${C.wa}" target="_blank" rel="noopener">${t.wa}</a><img id="qr" alt="QR"><p>${t.scan} ${S.table}</p>${S.own?admF(t):""}</div>`}
+function pick(k){const f=document.createElement("input");f.type="file";f.accept="image/*";f.onchange=()=>{const r=new FileReader();r.onload=()=>{const m=new Image();m.onload=()=>{const c=document.createElement("canvas");c.width=c.height=160;const z=Math.min(m.width,m.height),x=c.getContext("2d");x.drawImage(m,(m.width-z)/2,(m.height-z)/2,z,z,0,0,160,160);S.img[k]=c.toDataURL("image/jpeg",.7);dirty();render()};m.src=r.result};r.readAsDataURL(f.files[0])};f.click()}
+(function(){const c=$("fx"),x=c.getContext("2d");if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;let w,h,p=[];const rs=()=>{w=c.width=c.offsetWidth;h=c.height=c.offsetHeight};rs();addEventListener("resize",rs);for(let i=0;i<40;i++)p.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+.4,s:Math.random()*.4+.1,a:Math.random()*6});(function f(){x.clearRect(0,0,w,h);p.forEach(q=>{q.y-=q.s;q.a+=.02;if(q.y<0){q.y=h;q.x=Math.random()*w}x.fillStyle=`rgba(240,213,140,${.15+.35*Math.abs(Math.sin(q.a))})`;x.beginPath();x.arc(q.x,q.y,q.r,0,7);x.fill()});requestAnimationFrame(f)})()})();
+let DS={
+b1:{ku:"هێلکەی تازە لەگەڵ پەنیری تواوە و گیا",ar:"بيض طازج مع جبن ذائب وأعشاب",en:"Fresh eggs, melted cheese and herbs"},
+b2:{ku:"قەیماخی تازە لەگەڵ هەنگوینی سروشتی",ar:"قشطة طازجة مع عسل طبيعي",en:"Fresh cream with natural honey"},
+b3:{ku:"هێلکە لە سۆسی تەماتە و بیبەری تێکەڵ",ar:"بيض في صلصة طماطم وفلفل",en:"Eggs in spiced tomato and pepper sauce"},
+b4:{ku:"قاوەی ڕەسەن بە کەفی ئەستوور",ar:"قهوة أصيلة برغوة كثيفة",en:"Rich coffee with thick foam"},
+l1:{ku:"گەڵای مێو پڕکراو بە برنج و گۆشتی بەرخ",ar:"ورق عنب محشي بالأرز ولحم الضأن",en:"Vine leaves stuffed with rice and lamb"},
+l2:{ku:"مریشکی تێخراو و برژاو لەسەر خەڵووز",ar:"دجاج متبل مشوي على الفحم",en:"Marinated chicken grilled over charcoal"},
+l3:{ku:"ماسی دیجلە بە شێوازی ڕەسەنی عێراقی لەسەر ئاگر",ar:"سمك دجلة على الطريقة العراقية فوق الجمر",en:"River fish cooked Iraqi-style over open fire"},
+l4:{ku:"شۆربای نیسکی سووربوو بە لیمۆ",ar:"شوربة عدس بالليمون",en:"Red lentil soup with lemon"},
+d1:{ku:"بەرخی هێواش برژاو لەسەر برنجی بەهاراتدار",ar:"لحم ضأن بطيء الطهي على أرز متبل",en:"Slow-roasted lamb on spiced rice"},
+d2:{ku:"کەباب، تکە و پارچەی مەڕ لە یەک سینیدا",ar:"كباب وتكة ولحم مشوي في صينية",en:"Kebab, tikka and lamb cuts on one tray"},
+d3:{ku:"کونافەی گەرم بە پەنیر و شەربەتی گوڵ",ar:"كنافة ساخنة بالجبن وشراب الورد",en:"Warm cheese kunafa with rose syrup"},
+d4:{ku:"چایی بە زەعفەران و هێل",ar:"شاي بالزعفران والهيل",en:"Tea with saffron and cardamom"}};
+try{if(localStorage.getItem("zer-t")=="i")document.documentElement.dataset.th="i"}catch(e){}
+const RG={b:"06:00 – 11:00",l:"11:00 – 17:00",d:"17:00 – 23:00"};
+function secH(){const p=P.find(x=>x.k==S.per);return `<h2 class="sec">${p.n[S.lang]}<small><bdi dir="ltr">${RG[S.per]}</bdi></small></h2>`}
+function sheet(){const t=T[S.lang],L=M.filter(m=>S.cart[m[1]]);if(!L.length)return;$("sht").textContent=t.table+" "+S.table;$("shl").innerHTML=L.map(m=>`<div class="ln"><span>${m[2][S.lang]} × ${S.cart[m[1]]}</span><span>${fmt(pr(m)*S.cart[m[1]])}</span></div>`).join("");$("shk").textContent=t.total;$("shv").textContent=fmt(tot())+" "+t.cur;$("nt").placeholder=t.nt;$("sh").classList.add("on")}
+const hero=document.querySelector(".hero");hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",e.clientX-r.left+"px");hero.style.setProperty("--my",e.clientY-r.top+"px")});
+let SG=new Set(["l3","d1"]);
+function toast(k){const m=M.find(x=>x[1]==k),e=$("ts");e.textContent="+ "+m[2][S.lang];e.classList.remove("on");void e.offsetWidth;e.classList.add("on");try{navigator.vibrate&&navigator.vibrate(15)}catch(x){}}
+const DATA=JSON.parse(document.getElementById("data").textContent);
+if(DATA){C=DATA.C;M=DATA.M;DS=DATA.DS;SG=new Set(DATA.SG);S.img=DATA.IMG||{}}
+const ed=(id,f)=>`data-e="${id}:${f}" ${S.own?'contenteditable="true"':""}`;
+const admF=t=>`<div class="adm">${["name","wa","tel","ig","map","o0","o1"].map((k,i)=>`<label>${t.fl[i]}<input data-c="${k}" ${k[0]=="o"?"type=number":""} value="${String(k=="o0"?C.open[0]:k=="o1"?C.open[1]:C[k]).replace(/"/g,"&quot;")}"></label>`).join("")}</div>`;
+document.addEventListener("change",e=>{const k=e.target.dataset&&e.target.dataset.c;if(!k)return;const v=e.target.value.trim();if(k=="o0")C.open[0]=+v;else if(k=="o1")C.open[1]=+v;else C[k]=v;dirty()});
+const FONTS="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Noto+Naskh+Arabic:wght@400;600&amp;family=Cormorant+Garamond:wght@500;700&amp;display=swap";
+let ART=null;
+function dirty(){S.dirty=1;$("pub").hidden=false}
+function note(x){const e=$("ts");e.textContent=x;e.classList.remove("on");void e.offsetWidth;e.classList.add("on")}
+function build(){
+ const st=JSON.stringify({C,M,DS,SG:[...SG],IMG:S.img}).replace(/</g,"\\u003c");
+ return '<!DOCTYPE html>\n<html lang="ku" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>'+C.name.replace(/[<&]/g,"")+'</title><link href="'+FONTS+'" rel="stylesheet"><style id="css">'+$("css").textContent+'</style></head><body><div id="root">'+SK+'</div><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"><\/script><script type="application/json" id="data">'+st+'<\/script><script id="app">'+$("app").textContent+'<\/script></body></html>'
+}
+async function publish(){
+ const t=T[S.lang],b=$("pub");b.disabled=true;b.textContent=t.saving;
+ if(!ART){const l=document.createElement("a");l.href=URL.createObjectURL(new Blob([build()],{type:"text/html"}));l.download="index.html";document.body.appendChild(l);l.click();l.remove();b.disabled=false;b.textContent=t.pub;note("index.html ✓");return}
+ try{await ART.publish(build())}catch(e){b.disabled=false;b.textContent=t.pub;if(!e||e.code!="conflict")note(t.pfail)}
+}
+$("spl").textContent=C.name;setTimeout(()=>$("sp").classList.add("off"),1700);
+render();
+(async()=>{try{const[a,u]=await Promise.all([claude.use("artifact"),claude.use("user")]);ART=a;S.admin=!!(a&&u&&(u.canEdit()||u.isOwner()))||location.hash=="#admin"}catch(e){S.admin=location.hash=="#admin"}S.q=1;render();S.q=0})();
+</script>
+</body>
+</html>
